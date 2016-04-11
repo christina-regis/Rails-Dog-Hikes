@@ -3,9 +3,19 @@
   <p> Hello, <%= current_user.name %></p>
 <% end %>
 
+<!-- shows hike created by the current user -->
+<% current_user.hikes.each do |hike| %>
+  <%= hike.name %>
+<% end %>
+
+<!-- shows all hikes created -->
+<% @hikes.each do |hike| %>
+  <%= hike.name %>
+<% end %>
+
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %> - <%= user.emails %> - <%= user.password_digest %></li>
+    <li><%= user.name %> - <%= user.email %> - <%= user.password_digest %></li>
   <% end %>
 </ul>
 

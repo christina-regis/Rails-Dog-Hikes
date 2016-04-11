@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @hikes = Hike.all
   end
 
   def new
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new ({
       name: params[:name],
-      emails: params[:email],
+      email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
       })

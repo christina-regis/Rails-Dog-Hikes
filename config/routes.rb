@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'hikes/new'
+
+  get 'hikes/edit'
+
+  get 'hikes/show'
+
   root 'sessions#index'
 
   get 'users/index'
