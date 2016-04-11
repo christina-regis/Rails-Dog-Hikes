@@ -1,0 +1,17 @@
+
+<% if current_user %>
+  <p> Hello, <%= current_user.name %></p>
+<% end %>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %> - <%= user.emails %> - <%= user.password_digest %></li>
+  <% end %>
+</ul>
+
+<form action="/logout" method="post">
+  <input name="_method" value="Delete" type="hidden">
+  <button>Logout</button>
+</form>
+
+
