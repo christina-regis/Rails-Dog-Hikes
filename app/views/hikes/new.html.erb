@@ -1,2 +1,33 @@
-<h1>Hikes#new</h1>
-<p>Find me in app/views/hikes/new.html.erb</p>
+<h1>Create a new hike</h1>
+
+<form action="/hikes" method="post">
+  <label>Name</label>
+  <input name="name" type="text">
+  <br>
+  <label>Location</label>
+  <input name="location" type="text">
+  <br>
+  <label>Distance</label>
+  <input name="distance" type="float">
+  <br>
+  <label>Difficulty</label>
+  <input name="difficulty" type="text">
+  <br>
+  <label>Description</label>
+  <input name="description" type="text">
+  <br>
+  <label>Directions</label>
+  <input name="directions" type="text">
+  <br>
+  <label>Are poo bags available?</label>
+  <input name="poo_bags_available" type="text">
+  <br>
+  <label>Are dogs allowed off leash?</label>
+  <input name="dogs_allowed_off_leash" type="text">
+  <br>
+  <label>Are there trash cans?</label>
+  <input name="trash_cans" type="text">
+  <br>
+  <button>Post</button>
+</form>
+

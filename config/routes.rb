@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'hikes/new'
+  get 'hikes' => 'hikes#new'
+
+  post 'hikes' => 'hikes#create'
 
   get 'hikes/edit'
 
-  get 'hikes/show'
+  get 'myhikes' => 'hikes#show'
 
   root 'sessions#index'
 

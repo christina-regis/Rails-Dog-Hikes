@@ -1,2 +1,8 @@
-<h1>Hikes#show</h1>
-<p>Find me in app/views/hikes/show.html.erb</p>
+<% if current_user %>
+  <p> Hello, <%= current_user.name %></p>
+<% end %>
+
+<!-- shows hike created by the current user -->
+<% current_user.hikes.each do |hike| %>
+  <%= hike.name %>
+<% end %>

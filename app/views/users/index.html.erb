@@ -3,14 +3,19 @@
   <p> Hello, <%= current_user.name %></p>
 <% end %>
 
-<!-- shows hike created by the current user -->
-<% current_user.hikes.each do |hike| %>
-  <%= hike.name %>
-<% end %>
+<form action="/hikes" method="get">
+  <button>Add a new hike</button>
+</form>
+<br>
+
+<form action="/myhikes" method="get">
+  <button>See my hikes</button>
+</form>
+<br>
 
 <!-- shows all hikes created -->
 <% @hikes.each do |hike| %>
-  <%= hike.name %>
+  <p><%= hike.name %></p>
 <% end %>
 
 <ul>
@@ -23,5 +28,7 @@
   <input name="_method" value="Delete" type="hidden">
   <button>Logout</button>
 </form>
+
+
 
 
