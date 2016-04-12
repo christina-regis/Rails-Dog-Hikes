@@ -1,6 +1,5 @@
 class HikesController < ApplicationController
   def new
-    @hikes = Hike.all
   end
 
   def edit
@@ -10,7 +9,8 @@ class HikesController < ApplicationController
   end
 
   def create
-    @hike = Hike.new ({
+    @user = User.find(session[:user_id])
+    @hike = @user.hikes.new ({
       name: params[:name],
       location: params[:location],
       distance: params[:distance],
@@ -19,10 +19,12 @@ class HikesController < ApplicationController
       directions: params[:directions],
       poo_bags_available: params[:poo_bags_available],
       dogs_allowed_off_leash: params[:dogs_allowed_off_leash],
-      trash_cans: params[:trash_cans]
+      trash_cans: params[:trash_cans],
       })
     if @hike.save
       redirect_to '/users/index'
+  else
+    render :new
     end
   end
 end

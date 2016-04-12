@@ -12,10 +12,24 @@
   <button>See my hikes</button>
 </form>
 <br>
+<form action="/logout" method="post">
+  <input name="_method" value="Delete" type="hidden">
+  <button>Logout</button>
+</form>
+<br>
 
 <!-- shows all hikes created -->
 <% @hikes.each do |hike| %>
-  <p><%= hike.name %></p>
+  <p>Name: <%= hike.name %></p>
+  <p>Location: <%= hike.location %></p>
+  <p>Distance: <%= hike.distance %></p>
+  <p>Difficulty: <%= hike.difficulty %></p>
+  <p>Description: <%= hike.description %></p>
+  <p>Directions: <%= hike.directions %></p>
+  <p>Are poo bags available? <%= hike.poo_bags_available %></p>
+  <p>Are dogs allowed off leash? <%= hike.dogs_allowed_off_leash %></p>
+  <p>Are trash cans available? <%= hike.trash_cans %></p>
+  <br>
 <% end %>
 
 <ul>
@@ -24,10 +38,6 @@
   <% end %>
 </ul>
 
-<form action="/logout" method="post">
-  <input name="_method" value="Delete" type="hidden">
-  <button>Logout</button>
-</form>
 
 
 
