@@ -3,6 +3,12 @@ class HikesController < ApplicationController
   end
 
   def edit
+    @hike = Hike.find(params[:id])
+    if @hike.save
+      redirect_to 'myhikes'
+    else
+      render :edit
+    end
   end
 
   def show
@@ -26,6 +32,12 @@ class HikesController < ApplicationController
   else
     render :new
     end
+  end
+
+  def destroy
+    @hike = Hike.find(params[:id])
+    @hike.destroy
+    redirect_to 'myhikes'
   end
 end
 

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'myhikes' => 'hikes#show'
 
+  delete 'hikes' => 'hikes#destroy'
+
   root 'sessions#index'
 
   get 'users/index'
