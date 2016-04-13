@@ -5,7 +5,11 @@
 <form action="/users/index" method="get">
   <button>Back to homepage</button>
 </form>
-
+<br>
+<form action="/logout" method="post">
+  <input name="_method" value="Delete" type="hidden">
+  <button>Logout</button>
+</form>
 <br>
 <!-- shows hike created by the current user -->
 <% if current_user %>

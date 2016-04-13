@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'sessions#index'
+
   get 'hikes' => 'hikes#new'
 
   post 'hikes' => 'hikes#create'
@@ -7,9 +9,7 @@ Rails.application.routes.draw do
 
   get 'myhikes' => 'hikes#show'
 
-  delete 'hikes' => 'hikes#destroy'
-
-  root 'sessions#index'
+  delete 'hikes/:id' => 'hikes#destroy'
 
   get 'users/index'
 
