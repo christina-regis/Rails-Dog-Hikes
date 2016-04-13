@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
   root 'sessions#index'
 
-  get 'hikes' => 'hikes#new'
+  get 'hikes/new' => 'hikes#new'
 
   post 'hikes' => 'hikes#create'
 
-  get 'hikes/edit'
+  get 'hikes/edit/:id' => 'hikes#edit', as: :edit_hike
 
-  get 'myhikes' => 'hikes#show'
+  get 'hikes/:id' => 'hikes#show', as: :hike
+
+  patch 'hikes/:id' => 'hikes#update'
 
   delete 'hikes/:id' => 'hikes#destroy'
 
-  get 'users/index'
+  get 'users' => 'users#index'
+
+  get 'users/:id' => 'users#show', as: :myhikes
 
   get 'signup' => 'users#new'
 

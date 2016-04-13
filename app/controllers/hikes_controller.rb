@@ -1,11 +1,17 @@
 class HikesController < ApplicationController
   def new
+    @hike = Hike.new
   end
 
   def edit
     @hike = Hike.find(params[:id])
+  end
+
+  def update
+    @hike = Hike.find(params[:id])
+    @hike.update_attributes(hike_params)
     if @hike.save
-      redirect_to 'myhikes'
+      redirect_to myhikes_path
     else
       render :edit
     end
@@ -16,19 +22,9 @@ class HikesController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @hike = @user.hikes.new ({
-      name: params[:name],
-      location: params[:location],
-      distance: params[:distance],
-      difficulty: params[:difficulty],
-      description: params[:description],
-      directions: params[:directions],
-      poo_bags_available: params[:poo_bags_available],
-      dogs_allowed_off_leash: params[:dogs_allowed_off_leash],
-      trash_cans: params[:trash_cans],
-      })
+    @hike = @user.hikes.new(hike_params)
     if @hike.save
-      redirect_to '/users/index'
+      redirect_to users_path
   else
     render :new
     end
@@ -37,8 +33,15 @@ class HikesController < ApplicationController
   def destroy
     @hike = Hike.find(params[:id])
     @hike.destroy
-    redirect_to 'myhikes'
+    redirect_to myhikes_path
   end
+
+private
+
+  def hike_params
+    params.require(:hike).permit(:name, :location, :distance, :difficulty, :description, :directions, :poo_bags_available, :dogs_allowed_off_leash, :trash_cans, :user_id)
+  end
+
 end
 
 

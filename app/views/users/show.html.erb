@@ -23,11 +23,8 @@
     <p>Are poo bags available? <%= hike.poo_bags_available %></p>
     <p>Are dogs allowed off leash? <%= hike.dogs_allowed_off_leash %></p>
     <p>Are trash cans available? <%= hike.trash_cans %></p>
-    <form action="/hikes/:id" method="get">
-    <button>Edit</button>
-    </form>
-    <%= button_to 'Destroy', 'hikes', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit', edit_hike_path(hike) %>
+    <%= button_to 'Destroy', hike_path(hike), method: :delete, data: { confirm: 'Are you sure?' } %>
     <br>
   <% end %>
 <% end %>
-

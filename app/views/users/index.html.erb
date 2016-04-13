@@ -3,9 +3,9 @@
   <p> Hello, <%= current_user.name %></p>
 <% end %>
 
-<form action="/hikes" method="get">
-  <button>Add a new hike</button>
-</form>
+
+<%= link_to 'Add a new hike', hikes_new_path, {class: 'btn btn-default'} %>
+
 <br>
 
 <form action="/myhikes" method="get">
