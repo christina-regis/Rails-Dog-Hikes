@@ -1,9 +1,9 @@
 <% if current_user %>
-  <p> Hello, <%= current_user.name %></p>
+  <h3> Hello, <%= current_user.name %></h3>
 <% end %>
 <%= link_to 'Add a new hike', hikes_new_path, {class: 'btn btn-default'} %>
 <%= link_to 'See hikes from all users', users_path, {class: 'btn btn-default'} %>
-<%= button_to 'logout', logout_path, method: :delete %>
+<%= button_to 'logout', logout_path, class: 'btn btn-default', method: :delete %>
 
 <br>
 <br>
@@ -19,8 +19,9 @@
     <p>Are poo bags available? <%= hike.poo_bags_available %></p>
     <p>Are dogs allowed off leash? <%= hike.dogs_allowed_off_leash %></p>
     <p>Are trash cans available? <%= hike.trash_cans %></p>
+    <p><%= image_tag hike.image.url(:large) %></p>
     <%= link_to 'Edit', edit_hike_path(hike), {class: 'btn btn-default'} %>
-    <%= button_to 'Destroy', hike_path(hike), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to 'Destroy', hike_path(hike), class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
     <br>
   <% end %>
 <% end %>
