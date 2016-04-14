@@ -1,46 +1,46 @@
 <%= form_for @hike do |f| %>
 
-  <div>
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, :required => true %>
+    <%= f.text_field :name, :required => true, :class => 'form-control' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :distance %>
     <%= f.number_field :distance, :step => 'any' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :difficulty %>
     <%= f.text_field :difficulty %>
   </div>
 
-    <div>
+  <div class="form-group">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
-    <div>
+  <div class="form-group">
     <%= f.label :directions %>
     <%= f.text_area :directions %>
   </div>
 
-    <div>
+  <div class="form-group">
     <%= f.label :poo_bags_available %>
     <%= f.select :poo_bags_available, options_for_select([["Select One", ""], "Yes", "No"]) %>
   </div>
 
-    <div>
+  <div class="form-group">
     <%= f.label :dogs_allowed_off_leash %>
     <%= f.select :dogs_allowed_off_leash, options_for_select([["Select One", ""], "Yes", "No"]) %>
   </div>
 
-    <div>
+  <div >
     <%= f.label :trash_cans %>
     <%= f.select :trash_cans, options_for_select([["Select One", ""], "Yes", "No"]) %>
   </div>

@@ -34,6 +34,10 @@ gem 'bootstrap-sass'
 
 gem 'paperclip'
 
+gem 'figaro'
+
+gem 'aws-sdk', '<2.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

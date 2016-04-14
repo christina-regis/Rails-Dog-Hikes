@@ -33,14 +33,4 @@ user = User.create({
   password_confirmation:"admin"
 })
 
-user.hikes.create({
-  name: "Back of Hollywood sign in Griffith Park",
-  location: "Hollywood Hills",
-  difficulty: "moderate",
-  description: "steady incline mostly in the sun with beautiful views of Los Angeles",
-  distance: 6.5,
-  directions: "3200 Canyon Drive, Griffith Park, LA",
-  poo_bags_available: "yes",
-  dogs_allowed_off_leash: "no",
-  trash_cans: "yes"
-  })
+
