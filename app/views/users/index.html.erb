@@ -3,19 +3,10 @@
   <p> Hello, <%= current_user.name %></p>
 <% end %>
 
-
 <%= link_to 'Add a new hike', hikes_new_path, {class: 'btn btn-default'} %>
-
+<%= link_to 'My hikes', 'users/index', {class: 'btn btn-default'} %>
+<%= button_to 'logout', logout_path, method: :delete %>
 <br>
-
-<form action="/myhikes" method="get">
-  <button>See my hikes</button>
-</form>
-<br>
-<form action="/logout" method="post">
-  <input name="_method" value="Delete" type="hidden">
-  <button>Logout</button>
-</form>
 <br>
 
 <!-- shows all hikes created -->
@@ -32,11 +23,7 @@
   <br>
 <% end %>
 
-<ul>
-  <% @users.each do |user| %>
-    <li><%= user.name %> - <%= user.email %> - <%= user.password_digest %></li>
-  <% end %>
-</ul>
+
 
 
 
