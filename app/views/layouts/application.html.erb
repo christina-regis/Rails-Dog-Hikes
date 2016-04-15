@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<div class="container">
 
   <% if current_user %>
     <ul class="nav nav-pills">
@@ -20,8 +19,9 @@
     </ul>
   <% end %>
 
-  <%= yield %>
+<div class="container frontcolorbox">
 
+  <%= yield %>
 </div>
 
 </body>
