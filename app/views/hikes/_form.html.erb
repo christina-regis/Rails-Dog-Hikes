@@ -7,27 +7,27 @@
 
   <div class="form-group">
     <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, :class => 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :distance %>
-    <%= f.number_field :distance, :step => 'any' %>
+    <%= f.number_field :distance, :class => 'form-control', :step => 'any' %>
   </div>
 
   <div class="form-group">
     <%= f.label :difficulty %>
-    <%= f.text_field :difficulty %>
+    <%= f.text_field :difficulty, :class => 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :directions %>
-    <%= f.text_area :directions %>
+    <%= f.text_area :directions, :class => 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -40,12 +40,12 @@
     <%= f.select :dogs_allowed_off_leash, options_for_select([["Select One", ""], "Yes", "No"]) %>
   </div>
 
-  <div >
+  <div class="form-group">
     <%= f.label :trash_cans %>
     <%= f.select :trash_cans, options_for_select([["Select One", ""], "Yes", "No"]) %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image%>
   </div>

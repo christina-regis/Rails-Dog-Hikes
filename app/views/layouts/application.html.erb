@@ -11,6 +11,15 @@
 
 <div class="container">
 
+  <% if current_user %>
+    <ul class="nav nav-pills">
+      <li role="presentation"><%= link_to 'My Hikes', '/users/index' %></li>
+      <li role="presentation"><%= link_to 'Add a New Hike', hikes_new_path %></li>
+      <li role="presentation"><%= link_to 'See Hikes From All Users', users_path %></li>
+      <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+    </ul>
+  <% end %>
+
   <%= yield %>
 
 </div>

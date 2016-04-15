@@ -1,11 +1,7 @@
 <% if current_user %>
   <h3> Hello, <%= current_user.name %></h3>
 <% end %>
-<%= link_to 'Add a new hike', hikes_new_path, {class: 'btn btn-default'} %>
-<%= link_to 'See hikes from all users', users_path, {class: 'btn btn-default'} %>
-<%= button_to 'logout', logout_path, class: 'btn btn-default', method: :delete %>
 
-<br>
 <br>
 <!-- shows hike created by the current user -->
 <% if current_user %>

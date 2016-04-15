@@ -3,10 +3,6 @@
   <h3> Hello, <%= current_user.name %></h3>
 <% end %>
 
-<%= link_to 'Add a new hike', hikes_new_path, {class: 'btn btn-default'} %>
-<%= link_to 'My hikes', 'users/index', {class: 'btn btn-default'} %>
-<%= button_to 'logout', logout_path, class: 'btn btn-default', method: :delete %>
-<br>
 <br>
 
 <!-- shows all hikes created -->
